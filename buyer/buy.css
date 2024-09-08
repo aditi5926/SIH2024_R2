@@ -221,3 +221,7 @@ button:hover {
     flex-direction: column;
 }
 
+.pay{
+    background-color: rgba(35, 79, 241, 0.765);
+}
+
