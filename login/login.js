@@ -1,15 +1,47 @@
-// JavaScript function to handle form submission and redirect
-function handleSignIn(event) {
-     event.preventDefault(); // Prevent default form submission behavior
- 
-     // Here you could add form validation or authentication check
- 
-     // Redirect to dashboard
-     window.location.href = "../Dashboard/dashboard.html";
- }
- 
- function signInWithGoogle() {
-     // Implement Google sign-in logic or redirect to Google OAuth flow
-     console.log("Google Sign-In triggered");
- }
- 
+async function handleSignIn(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    // Collect form data
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Construct data object to send
+    const data = {
+        Username: username,
+        Password: password
+    };
+
+    try {
+        // Send a POST request to the backend API
+        console.log(data);
+        const response = await fetch('http://localhost:4000/api/v1/auth/signin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        // Parse the response
+        // console.log("chkp 2");
+        const result = await response.json();
+        // console.log("chkp 3");
+        // Handle success or error messages from backend
+        if (result.success) {
+            console.log("Sign In successful");
+            alert('Sign In successful! Redirecting to dashboard...');
+            window.location.href = "../Dashboard/dashboard.html"; // Redirect to dashboard
+        } else {
+            console.log("Error during sign in:", result.message);
+            alert(result.message); // Show the error message
+        }
+    } catch (error) {
+        console.error('Error during sign in:', error);
+        alert('Something went wrong, please try again later.');
+    }
+}
+
+function signInWithGoogle() {
+    // Implement Google sign-in logic or redirect to Google OAuth flow
+    console.log("Google Sign-In triggered");
+}
