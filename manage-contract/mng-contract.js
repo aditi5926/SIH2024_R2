@@ -43,6 +43,8 @@ const contracts = [
                  <td>${contract.price}</td>
                  <td>${contract.date}</td>
                  <td><button onclick="downloadContract('${contract.id}')">Download</button></td>
+                 <td><button>Delete</button></td>
+
              </tr>
          `;
          contractsList.innerHTML += row;
