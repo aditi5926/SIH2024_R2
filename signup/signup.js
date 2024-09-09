@@ -39,9 +39,9 @@ document.getElementById('signup-form').addEventListener('submit', async function
         // Handle success or error messages from backend
         if (result.success) {
             alert('Signup successful! Redirecting to dashboard...');
-            window.location.href = "../Dashboard/dashboard.html"; // Redirect to dashboard
+            window.location.href = "../Dashboard/dashboard.html"; 
         } else {
-            alert(result.message); // Show the error message
+            alert(result.message);
         }
     } catch (error) {
         console.error('Error during signup:', error);
