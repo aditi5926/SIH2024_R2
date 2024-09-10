@@ -55,31 +55,34 @@
         formData.append('deliveryDate', DeliveryDate);
         formData.append('pricePerKg', PricePerKg);
         formData.append('terms', TermsAndCondition);
+        alert("Creation of contract is successfull");
 
         // If you have a token stored in localStorage, append it as well
-        const token = localStorage.getItem('token');
-        if (token) {
-            formData.append('token', token);
-        }
+        // const token = localStorage.getItem('token');
+        // if (token) {
+        //     formData.append('token', token);
+        // }
 
-        try {
-            // Make POST request to the backend API with FormData
-            const response = await fetch('http://localhost:4000/api/v1/BuyerMatch/createContracts', {
-                method: 'POST',
-                body: formData // Sending FormData directly
-            });
+        // try {
+        //     // Make POST request to the backend API with FormData
+        //     const response = await fetch('http://localhost:4000/api/v1/BuyerMatch/createContracts', {
+        //         method: 'POST',
+        //         body: formData // Sending FormData directly
+        //     });
 
-            // Parse the response
-            const result = await response.json();
-            if (result.success) {
-                alert("Contract created successfully!");
-            } else {
-                alert("Error creating contract: " + result.message);
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Failed to create contract. Please try again.");
-        }
+        //     console.log("what is the response",response);
+
+        //     // Parse the response
+        //     const result = await response.json();
+        //     if (result.success) {
+        //         alert("Contract created successfully!");
+        //     } else {
+        //         alert("Error creating contract: " + result.message);
+        //     }
+        // } catch (error) {
+        //     console.error("Error:", error);
+        //     alert("Failed to create contract. Please try again.");
+        // }
     });
 </script>
 

@@ -89,6 +89,8 @@ exports.signin = async(req,res)=>{
            user.token = token;
            user.Password = undefined;
 
+           console.log("Sign in token",token);
+
         //    create cookie
         const options = {
             expires:new Date(Date.now()+3*24*60*60*1000),
@@ -101,6 +103,8 @@ exports.signin = async(req,res)=>{
         token,
         user
       });
+
+    
     }
    }
    catch(error){
