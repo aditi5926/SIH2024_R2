@@ -38,8 +38,8 @@ document.getElementById('signup-form').addEventListener('submit', async function
 
         // Handle success or error messages from backend
         if (result.success) {
-            alert('Signup successful! Redirecting to dashboard...');
-            window.location.href = "../Dashboard/dashboard.html"; 
+            alert('Signup successful! Redirecting to login...');
+            window.location.href = "../login/login.html"; 
         } else {
             alert(result.message);
         }
