@@ -3,16 +3,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Consistent font */
+}
+
+/* Body Styling */
+body {
+  background-color: #f5f5dc; /* Light beige background for a farm theme */
+  color: #333; /* Consistent text color */
+  margin: 0;
+  padding: 0;
 }
 
 /* Sidebar Styling */
 .sidebar {
   height: 100%;
-  width: 0; /* Initially hidden */
+  width: 0;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #519cde;
+  background-color: #97e99b; /* Green for farm-related aesthetic */
   padding-top: 20px;
   overflow-x: hidden;
   transition: 0.3s;
@@ -21,13 +30,13 @@
 .menu-item {
   padding: 15px 25px;
   font-size: 1.2em;
-  color: white;
-  border-bottom: 1px solid #519cde;
+  color: rgb(11, 1, 1);
+  border-bottom: 1px solid #4CAF50;
   cursor: pointer;
 }
 
 .menu-item:hover {
-  background-color: #95c2ea;
+  background-color: #09a349; /* Slightly lighter green for hover effect */
 }
 
 .close-btn {
@@ -53,7 +62,7 @@
 
 /* Main Content */
 .main-content {
-  margin-left: 0; /* Initially no margin since sidebar is hidden */
+  margin-left: 0;
   padding: 20px;
   transition: margin-left 0.3s ease;
 }
@@ -62,7 +71,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #4ed385;
+  background-color: #09a349; /* Green header for consistency */
   border-bottom: 1px solid #ccc;
 }
 
@@ -75,14 +84,14 @@
 /* Greeting Section */
 .greeting {
   margin: 20px 0;
-  font-size: 1em; /* Adjusted font size */
-  color: #519cde;
-  text-align: center; /* Center text */
+  font-size: 1em;
+  color: #005f23;; /* Green text to match the farm theme */
+  text-align: center;
 }
 
 .greeting img {
   width: 100%;
-  max-width: 500px; /* Adjust as needed */
+  max-width: 500px;
   height: auto;
   border-radius: 10px;
   margin-top: 20px;
@@ -95,45 +104,48 @@
 
 .services-section h2 {
   font-size: 1.8em;
-  color: #27ae60;
+  color: #005f23;; /* Green for headers */
   margin-bottom: 20px;
-  text-align: center; /* Center text */
+  text-align: center;
 }
 
 .service-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
-  justify-content: center; /* Center content */
-  margin-bottom: 50px;
-  
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .feature-card {
-  background-color: #27ae60;
+  background-color: #09a349; /* Green background */
   color: white;
-  padding: 20px;
+  padding: 20px; /* Increase padding for a more spacious look */
   text-align: center;
-  border-radius: 10px;
-  width: 150px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-size: 1em; /* Adjusted font size */
+  border-radius: 12px; /* Slightly larger border radius for a modern look */
+  width: 200px; /* Increased width for better readability */
+  height: 100px; /* Increased height to accommodate content */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Softer, larger shadow */
+  font-size: 1.1em; /* Slightly larger font size */
   cursor: pointer;
-  transition: background-color 0.3s ease;
- 
-
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for scaling effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .feature-card:hover {
-  background-color: #2ecc71;
+  background-color: #2ecc71; /* Lighter green on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
 }
+
 
 /* Footer Styling */
 .footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color:#1b67aa;
+  background-color: #005f23;;
   color: white;
   padding: 10px;
   position: fixed;
@@ -148,15 +160,42 @@
 }
 
 .footer-item:hover {
-  color: #2ecc71;
+  color: #f1ee31;
 }
 
+/* Mobile View - Improved button alignment */
 @media (max-width: 720px) {
   .service-row {
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .feature-card {
-    flex: 1 1 calc(33.333% - 10px); /* Three divs per row */
+    flex: 1 1 calc(50% - 10px);
+    width: 100%;
+    max-width: 150px;
   }
+
+  .greeting img {
+    max-width: 100%;
+  }
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: #333;
+  z-index: 100;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 0;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  padding-top: 60px;
 }
